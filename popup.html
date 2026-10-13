@@ -1,0 +1,56 @@
+<!doctype html>
+<meta charset="utf-8">
+<link rel="stylesheet" href="popup.css">
+<header>
+  <div class="logo">Y</div>
+  <div><div class="title">Yapper Tools</div><div class="sub">Mute people and filter chat, just for you</div></div>
+</header>
+
+<nav class="tabs">
+  <button class="tab active" data-tab="mute">Mute</button>
+  <button class="tab" data-tab="filter">Word filter</button>
+</nav>
+
+<section id="tab-mute" class="panel">
+  <div class="card">
+    <label class="lbl" for="who">Mute someone</label>
+    <div class="add-row">
+      <input id="who" type="text" list="known" placeholder="Username" autocomplete="off">
+      <button id="add" class="primary">Mute</button>
+    </div>
+    <datalist id="known"></datalist>
+    <div class="opts">
+      <label class="chk"><input id="inChat" type="checkbox" checked><span>Chat</span></label>
+      <label class="chk"><input id="inVoice" type="checkbox" checked><span>Voice</span></label>
+    </div>
+    <div id="mmsg" class="note"></div>
+  </div>
+
+  <div class="card">
+    <div class="lbl">Muted people</div>
+    <ul id="people"></ul>
+  </div>
+  <p class="hint">Shortcut: hover a message or a name in the voice list and click 🔇.</p>
+</section>
+
+<section id="tab-filter" class="panel" hidden>
+  <div class="card">
+    <div class="switch-row">
+      <div><div class="lbl nm">AI word filter</div><div class="hint">Hides slurs and filter-evasion on your screen</div></div>
+      <label class="switch"><input id="censorOn" type="checkbox"><span class="slider"></span></label>
+    </div>
+  </div>
+  <div class="card">
+    <label class="lbl" for="key">Gemini API key</label>
+    <div class="add-row">
+      <input id="key" type="password" placeholder="Paste your key" autocomplete="off">
+      <button id="showkey" class="ghost" type="button">Show</button>
+    </div>
+    <label class="lbl" for="model" style="margin-top:10px">Model</label>
+    <input id="model" type="text" placeholder="gemini-2.5-flash">
+    <button id="save" class="primary full">Save</button>
+    <div id="fmsg" class="note"></div>
+  </div>
+  <p class="hint">Message text from channels you open is sent to Google using your own key. Reload yapper.website after saving.</p>
+</section>
+<script src="popup.js"></script>

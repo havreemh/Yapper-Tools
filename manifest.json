@@ -1,0 +1,27 @@
+{
+  "manifest_version": 3,
+  "name": "Yapper Tools",
+  "version": "0.3.1",
+  "description": "Client-side mute and AI word filter for yapper.website",
+  "permissions": ["storage"],
+  "host_permissions": [
+    "https://www.yapper.website/*",
+    "https://yapper.website/*",
+    "https://generativelanguage.googleapis.com/*"
+  ],
+  "background": { "service_worker": "background.js" },
+  "action": { "default_popup": "popup.html", "default_title": "Yapper Tools" },
+  "content_scripts": [
+    {
+      "matches": ["https://www.yapper.website/*", "https://yapper.website/*"],
+      "js": ["inject.js"],
+      "run_at": "document_start",
+      "world": "MAIN"
+    },
+    {
+      "matches": ["https://www.yapper.website/*", "https://yapper.website/*"],
+      "js": ["bridge.js", "ui.js"],
+      "run_at": "document_start"
+    }
+  ]
+}
