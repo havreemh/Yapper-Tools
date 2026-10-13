@@ -9,7 +9,7 @@ Adds the stuff Yapper doesn't have yet:
 Everything happens on your own computer. Other people can't see that you muted them, and nothing changes for anyone else.
 
 **Install (Chrome / Edge / Brave)**
-1. Download and unzip the file somewhere you'll keep it.
+1. Download and unzip the file from releases somewhere you'll keep it.
 2. Go to chrome://extensions and turn on Developer mode (top right).
 3. Click "Load unpacked" and select the unzipped "yapper-tools" folder.
 4. Pin the extension, reload yapper.website, and click the icon to manage muted people.
